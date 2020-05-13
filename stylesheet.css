@@ -50,3 +50,8 @@ button:hover {
 .operator:hover, .equal-sign:hover {
   background-color: darkorange;
 }
+
+footer {
+  padding-left : 475px;
+  padding-top: 20px;
+}
