@@ -52,25 +52,25 @@ const inputOperator = (operator) => {
 
 /** Menghitung Bilanga dengan pilihan tombol operator */
 const calculate = () => {
-    let result = ''
-    switch (calculationperator){
-        case '+':
-            result = (parseFloat(prevNumber)*10)/10 + (parseFloat(currentNumber)*10)/10
-            break;
-        case '-':
-            result = prevNumber - currentNumber
-            break;
-        case '/':
-            result = prevNumber / currentNumber
-            break;
-        case '*':
-            result = prevNumber * currentNumber
-            break;
-        default:
-            return;
-    }
-    currentNumber = result
-    calculationperator = ''
+  let result = ''
+  switch (calculationOperator) {
+    case "+":
+      result = (parseFloat(+prevNumber)*10 + parseFloat(+currentNumber)*10)/10
+      break
+    case "-":
+      result = (parseFloat(prevNumber)*10 - parseFloat(currentNumber)*10)/10
+      break
+    case "*":
+      result = (parseFloat(prevNumber)*10 * parseFloat(currentNumber)*10)/100
+      break
+    case "/":
+      result = parseFloat(prevNumber) / parseFloat(currentNumber)
+      break
+    default:
+      return
+  }
+  currentNumber = result
+  calculationOperator = ''
 }
 
 /** SAMA DENGAN */
@@ -111,7 +111,13 @@ decimal.addEventListener ('click', (event) =>{
     updateScreen (currentNumber)
 })
 
-const persen = document.querySelector (".persen")
+const persen = document.querySelector (".percentage")
+
 persen.addEventListener ("click", (event) => {
-    calculatorScreen.value = currentNumber / 100       
+    inputPersen(event.target.value)
+    updateScreen(currentNumber)
 })
+
+const inputPersen = () => {
+    currentNumber /= 100
+}
