@@ -1,56 +1,63 @@
-/** Menampilkan NOMOR pada screen */
+// Menampilkan number pada screen
 const calculatorScreen = document.querySelector(".calculator-screen")
 
 const updateScreen = (number) => {
-    calculatorScreen.value = number
+  calculatorScreen.value = number
 }
 
 const numbers = document.querySelectorAll(".number")
 
 numbers.forEach((number) => {
-    number.addEventListener("click", (event) => {
-        updateScreen (event.target.value)
-    })
+  number.addEventListener("click", (event) => {
+    console.log(event.target.value)
+  })
 })
 
-/** Membedakan bilangan 1 dengan bilangan 2 */
 let prevNumber = ''
-let calculationperator = ''
-let currentNumber= '0'
+let calculationOperator = ''
+let currentNumber = '0'
 
 const inputNumber = (number) => {
-    if (currentNumber === '0') {
-        currentNumber = number
-    }else {
-        currentNumber += number
-    }
+  if (currentNumber === '0') {
+    currentNumber = number
+  } else {
+    currentNumber += number
+  }
 }
 
 numbers.forEach((number) => {
-    number.addEventListener("click", (event) => {
-        inputNumber(event.target.value)
-        updateScreen (currentNumber)
-    })
+  number.addEventListener("click", (event) => {
+    inputNumber(event.target.value)
+    updateScreen(currentNumber)
+  })
 })
 
-/** Memasukan Operator */
-const operators = document.querySelectorAll (".operator")
+// memasukan operator
+const operators = document.querySelectorAll(".operator")
 
-operators.forEach ((operator) => {
-    operator.addEventListener("click", (event) => {
-        inputOperator (event.target.value)
-    })
+operators.forEach((operator) => {
+  operator.addEventListener("click", (event) => {
+    inputOperator(event.target.value)
+  })
 })
 
 const inputOperator = (operator) => {
-    if (calculationperator === '') {
+  if (calculationOperator === '') {
     prevNumber = currentNumber
-    }
-    calculationperator = operator
-    currentNumber = '0'
+  }
+  calculationOperator = operator
+  currentNumber = '0'.
 }
 
-/** Menghitung Bilanga dengan pilihan tombol operator */
+// sama dengan
+const equalSign = document.querySelector('.equal-sign')
+
+equalSign.addEventListener('click', () => {
+  calculate()
+  updateScreen(currentNumber)
+})
+
+// Menghitung Bilangan dengan pilihan tombol operator
 const calculate = () => {
   let result = ''
   switch (calculationOperator) {
@@ -73,44 +80,36 @@ const calculate = () => {
   calculationOperator = ''
 }
 
-/** SAMA DENGAN */
-const equalSign = document.querySelector('.equal-sign')
-
-equalSign.addEventListener('click', () => {
-    calculate()
-    updateScreen (currentNumber)
-})
-
-/** Clear  */
-const clearAll = () => {
-    prevNumber= ''
-    calculationOperator = ''
-    currentNumber = '0'
+// clear / AC
+const clearAll = () =>  {
+  prevNumber = ''
+  calculationOperator = ''
+  currentNumber = '0'
 }
 
 const clearBtn = document.querySelector('.all-clear')
 
 clearBtn.addEventListener('click', () => {
-    clearAll ()
-    updateScreen (currentNumber)
+  clearAll()
+  updateScreen(currentNumber)
 })
 
-/** DESIMAL */
-
+// input decimal
 inputDecimal = (dot) => {
-    if (currentNumber.includes ('.')){
-        return
-    }
-    currentNumber += dot
+  if (currentNumber.includes('.')) {
+    return
+  }
+  currentNumber += dot
 }
 
-const decimal = document.querySelector ('.decimal')
+const decimal = document.querySelector('.decimal')
 
-decimal.addEventListener ('click', (event) =>{
-    inputDecimal (event.target.value)
-    updateScreen (currentNumber)
+decimal.addEventListener('click', (event) => {
+  inputDecimal(event.target.value)
+  updateScreen(currentNumber)
 })
 
+// persen %
 const persen = document.querySelector (".percentage")
 
 persen.addEventListener ("click", (event) => {
