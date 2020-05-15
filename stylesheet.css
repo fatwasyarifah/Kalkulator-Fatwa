@@ -1,56 +1,148 @@
+header {
+    height: 50px;
+    width: 100%;
+    background-color: lightgray;
+    position :fixed;
+    top: 0;
+    z-index: 10;
+    box-shadow: 2px 2px 5px #c7cad3;
+}
+
+.container img {
+    height: 60px;
+    margin-top: 2px;
+}
+
+.header-left {
+    float: left;
+    margin-left: 20px;
+    font-size: 18px;
+    color: red;
+}
+
+.header-left span {
+    color:blue;
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+.header-right {
+    height: 60px;
+    margin-top: 20px;
+    margin-right: 30px;
+    float: right;
+    font-size: 20px;
+}
+
+.header-right i {
+    color: #005AF0;
+    padding: 0 10px;
+}
+
+.header-right a {
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    padding-left: 23px;
+}
+
+.header-right a:hover {
+    color: #005AF0;
+}
+@media all and (max-width: 670px) {
+
+    .header-right {
+        text-align: center;
+        padding: 0 auto;
+        display: inline-block;
+        font-size: 15px;
+    }
+
+    .container img {
+        height: 50px;
+        margin-top: 8px;
+    }
+}
+
 .calculator {
-  text-align: center;
-  margin: 0 auto;
-  padding-top: 100px;
-  width: 400px;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 60px;
+    width: 400px;
 }
 
 .calculator-screen {
-  width: 100%;
-  height: 100px;
-  background-color: #252525;
-  color: #fff;
-  text-align: right;
-  font-size: 36px;
-  border: none;
-  padding: 0 20px;
-  box-sizing: border-box;
+    width: 100%;
+    height: 100px;
+    background-color: #252525;
+    color: #ffffff;
+    text-align: right;
+    font-size: 36px;
+    border: none;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .calculator-keys {
-  width: 100%;
+    width: 100%;
 }
 
 .row {
-  display: flex;
+    display: flex;
 }
 
 button {
-  height: 80px;
-  background-color: gray;
-  border: 1px solid black;
-  font-size: 32px;
-  color: #fff;
-  width: 25%;
-  outline: none;
+    height: 80px;
+    background-color: gray;
+    border: 1px solid black;
+    font-size: 32px;
+    color: #ffffff;
+    width: 25%;
+    outline: none;
 }
 
 .all-clear, .zero-btn {
-  width: 50%;
+    width: 50%;
 }
 
 .operator, .equal-sign {
-  background-color: orange;
+    background-color: orange;
 }
 
 button:hover {
-  background-color: darkgray;
+    background-color: darkgray;
 }
 
 .operator:hover, .equal-sign:hover {
-  background-color: darkorange;
+    background-color: darkorange;
+}
+
+/* Style untuk footer  */
+
+footer p {
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+}
+
+footer p a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer p a:hover {
+    color: lightseagreen;
+    text-decoration: none;
 }
 
 footer {
-  padding-top: 20px;
+    padding: 10px;
+    background-color: gray;
+    text-align: center ;
+    margin-top: 20px;
+}
+
+.main-footer {
+    margin: 0 auto;
+    display: inline-block;
 }
