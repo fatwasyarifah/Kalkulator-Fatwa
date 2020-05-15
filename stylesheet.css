@@ -1,16 +1,11 @@
 header {
     height: 50px;
     width: 100%;
-    background-color: lightgray;
+    background-color: white;
     position :fixed;
     top: 0;
     z-index: 10;
     box-shadow: 2px 2px 5px #c7cad3;
-}
-
-.container img {
-    height: 60px;
-    margin-top: 2px;
 }
 
 .header-left {
@@ -24,6 +19,12 @@ header {
     color:blue;
     padding-left: 10px;
     font-weight: bold;
+}
+
+.header-left h3 {
+    margin-top: -40px;
+    margin-left: 100px;
+    color: darkslategray;
 }
 
 .header-right {
@@ -54,7 +55,7 @@ header {
 
     .header-right {
         text-align: center;
-        padding: 0 auto;
+        /*padding: auto;*/
         display: inline-block;
         font-size: 15px;
     }
